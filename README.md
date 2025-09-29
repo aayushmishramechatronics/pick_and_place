@@ -8,7 +8,7 @@ The project utilizes `Gazebo` for the Physical Simulation and `MoveIt2` for Moti
 
 -----
 
-## \#\# System Prerequisites
+## System Prerequisites
 
 before you begin, ensure your system is equipped with the following:
 
@@ -24,7 +24,7 @@ before you begin, ensure your system is equipped with the following:
 
 -----
 
-## \#\# Step 1: Installation and Environment Setup
+## Step 1: Installation and Environment Setup
 
 first, you need to set up your ROS2 Workspace and install all the required software packages.
 
@@ -107,7 +107,7 @@ colcon build --symlink-install
 
 -----
 
-## \#\# Step 2: Running the Simulation
+## Step 2: Running the Simulation
 
 once the build is complete, you can run the pick-and-place simulation.
 
@@ -131,6 +131,6 @@ ros2 launch pick_and_place panda_world.launch.py
 
 -----
 
-## \#\# License
+## License
 
 This project is licensed under the MIT License.
