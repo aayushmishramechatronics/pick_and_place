@@ -23,7 +23,7 @@ class PickAndPlaceStateMachine(StateMachine):
 
         self.logger = self.controller.get_logger()
         self.logger.info('\n' + 80*'=')
-        self.logger.info("*** Pick-and-Place Mission Begins! ***") 
+        self.logger.info("Pick-and-Place Mission Begins!") 
         self.logger.info(80*'=')
 
         super().__init__()
@@ -33,7 +33,7 @@ class PickAndPlaceStateMachine(StateMachine):
         return self.controller.are_objects_on_workbench()
 
     def on_enter_home(self) -> None:
-        self.logger.info("Moving to home position..") 
+        self.logger.info("Moving to Home Position..") 
         self.controller.panda.move_to_neutral()
         self.object_selected = False
         self.object_placed = False
@@ -41,22 +41,22 @@ class PickAndPlaceStateMachine(StateMachine):
         self.send("select_object")
 
     def on_enter_selecting_object(self) -> None:
-        self.logger.info("Selecting object to pick..") 
+        self.logger.info("Selecting Object to Pick") 
         self.currently_selected_object = self.controller.select_random_object()
         self.object_selected = True
-        self.logger.info("Object selected.") 
+        self.logger.info("Object Selected.") 
         self.send("pick_object")
     
     def on_enter_picking_and_placing(self) -> None:
-        self.logger.info("Starting pick & place operation of selected object..") 
+        self.logger.info("Starting Pick and Place Operation of Selected Object") 
         self.controller.move_object(self.currently_selected_object)
         self.object_placed = True
-        self.logger.info("Object placed in its bin.")
+        self.logger.info("Object is Placed in its Bin.")
         self.send("get_ready")
     
     def on_enter_done(self) -> None:
         self.logger.info('\n' + 60*'=')
-        self.logger.info("*** Mission Complete! *** \nAll objects have been placed in their bins.") 
+        self.logger.info("Mission Complete! \nAll Objects have been Placed in their Bins.") 
         self.logger.info(60*'=')
 
 def main(args=None):
