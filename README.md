@@ -2,8 +2,6 @@
 
 -----
 
-# Pick-and-Place (ROS2 Version)
-
 ROS2 Simulation of a Franka Emika Panda Robot performing a Pick-and-Place Task. The Robot identifies Colored Blocks on a Workbench using a Simulated Kinect Camera, Picks Them Up, and Places them into their Corresponding Colored Bins.
 
 The project utilizes `Gazebo` for the Physical Simulation and `MoveIt2` for Motion Planning and Control.
