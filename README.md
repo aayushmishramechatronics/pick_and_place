@@ -1,6 +1,5 @@
-# ROS2_Pick-and-Place
-
 -----
+# ROS2_Pick-and-Place
 
 ROS2 Simulation of a Franka Emika Panda Robot performing a Pick-and-Place Task. The Robot identifies Colored Blocks on a Workbench using a Simulated Kinect Camera, Picks Them Up, and Places them into their Corresponding Colored Bins.
 
@@ -33,16 +32,16 @@ first, you need to set up your ROS2 Workspace and install all the required softw
 if you haven't already installed ROS2 Humble and its development tools, open a terminal and run the following commands:
 
 ```bash
-# Install ROS2 Humble, Gazebo, and development tools
+# install ROS2 Humble, Gazebo, and development tools
 sudo apt update && sudo apt install -y ros-humble-desktop-full ros-humble-dev-tools
 
-# Install MoveIt2 packages
+# install MoveIt2 packages
 sudo apt install -y ros-humble-moveit
 
-# Install ROS2 controllers and Gazebo integration
+# install ROS2 controllers and Gazebo integration
 sudo apt install -y ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-gazebo-ros-pkgs
 
-# Initialize rosdep
+# initialize rosdep
 sudo rosdep init
 rosdep update
 ```
@@ -61,10 +60,10 @@ cd ~/ros2_ws
 clone this project repository and its necessary dependencies (like the Franka ROS2 Description) into your workspace's `src` directory.
 
 ```bash
-#clone this project
+# clone this project
 git clone <your_repository_url> src/elena-ecn-pick-and-place
 
-#clone the required Franka ROS2 Repository for Robot Models
+# clone the required Franka ROS2 Repository for Robot Models
 git clone --branch humble https://github.com/frankaemika/franka_ros2.git src/franka_ros2
 ```
 
@@ -73,10 +72,10 @@ git clone --branch humble https://github.com/frankaemika/franka_ros2.git src/fra
 this project requires a few Python packages. A `requirements.txt` file is included to make this easy.
 
 ```bash
-#navigate to the project directory
+# navigate to the project directory
 cd src/elena-ecn-pick-and-place/pick_and_place
 
-#install the required python packages
+# install the required python packages
 pip install -r requirements.txt
 ```
 
@@ -93,13 +92,13 @@ statemachine
 use `rosdep` to install any remaining ROS packages and then build your workspace with `colcon`.
 
 ```bash
-#navigate back to the root of your workspace
+# navigate back to the root of your workspace
 cd ~/ros2_ws
 
-#install all required ROS dependencies
+# install all required ROS dependencies
 rosdep install --from-paths src --ignore-src -r -y
 
-#build the workspace
+# build the workspace
 colcon build --symlink-install
 ```
 
