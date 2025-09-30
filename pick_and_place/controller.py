@@ -9,7 +9,6 @@ import moveit_commander
 from geometry_msgs.msg import PoseStamped
 from tf_transformations import quaternion_from_euler
 
-# Mrinal Beti, Yeh Neeche ke Library ko Import karna mat bhulna apne ROS2 Workspace mein 
 # from franka_interface import GripperInterface
 # from panda_robot import PandaArm
 
